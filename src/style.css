@@ -1,0 +1,105 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: black;
+    color: white; /* Default text color */
+    overflow: hidden; /* Prevent scrolling */
+    display: flex; /* Use Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+}
+
+/* Heading Styles */
+.heading {
+    font-size: 3rem; /* Adjust as needed */
+    color: #39caee; /* Green color */
+    text-align: center;
+    margin: 20px 0; /* Margin for spacing */
+    opacity: 0; /* Start hidden for transition */
+    animation: fadeIn 0.5s forwards; /* Fade-in effect */
+    font-family: 'Lucida Sans', sans-serif;
+    background: linear-gradient(135deg, rgba(122, 26, 219, 0.5), rgba(0, 139, 173, 0.5));
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.smallheading {
+    font-size: 1.5rem; /* Adjust as needed */
+    color: #15bcf9; /* Light blue color */
+    text-align: center;
+    opacity: 0; /* Start hidden for transition */
+    animation: fadeIn 0.5s forwards; /* Fade-in effect */
+    animation-delay: 0.2s; /* Delay for small heading */
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, rgba(22, 7, 126, 0.637), rgba(23, 196, 115, 0.5));
+    padding: 8px;
+
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Hover Effects */
+.heading:hover, .smallheading:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.7); /* Deeper shadow on hover */
+}
+
+/* Other styles for the masked text and line */
+.masked {
+    position: relative;
+    background: url("") no-repeat center center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: cover;
+}
+
+.line {
+    border-bottom: 1px solid #333;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px;
+    margin-top: 20px; /* Space above the button */
+  }
+  
+  .portfolio-button {
+    background-color: #036ca9; /* Button color */
+    color: white; /* Text color */
+    font-size: 1.2rem; /* Font size */
+    padding: 10px 20px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .portfolio-button:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    background-color: #263da1; /* Change background color on hover */
+  }
+  
