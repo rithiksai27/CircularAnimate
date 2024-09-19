@@ -3,8 +3,17 @@ import "./style.css";
 import { OrbitControls } from "@react-three/drei";
 import Cyl from "./Cyl"; // Import the Cyl component
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
+import { useEffect } from "react"; // Import useEffect
 
 const App = () => {
+  useEffect(() => {
+    const audio = new Audio('/music.mp3'); // Path is correct
+    audio.loop = true; // Loop the audio
+    audio.play().catch(err => {
+      console.error("Error playing audio:", err);
+    });
+  }, []);
+
   return (
     <>
       <div>
@@ -24,11 +33,8 @@ const App = () => {
         </EffectComposer>
       </Canvas>
       <div className="button-container">
-  <a href="https://rithiksaiportfolio.vercel.app/" className="portfolio-button" target="_blank" rel="noopener noreferrer">Explore My Portfolio</a>
-</div>
-
-
-
+        <a href="https://rithiksaiportfolio.vercel.app/" className="portfolio-button" target="_blank" rel="noopener noreferrer">Explore My Portfolio</a>
+      </div>
     </>
   );
 };
